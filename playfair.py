@@ -27,7 +27,7 @@ def write_ciphertext(text):
 
 def display_matrix(matrix):
     for i in matrix:
-        print(i)
+        print(*i, sep="  ")
     print()
 
 
@@ -232,6 +232,7 @@ def decrypt(keyword, plaintext):
 # lnfzoudtgwekarimbqpcyvhxs
 # help is on the way
 
+
 print('Have content in your Plaintext.txt and Ciphertext.txt files!')
 choice = ""
 while True:
@@ -242,6 +243,7 @@ while True:
 
 if choice == '1':
     keyword = input('Enter your keyword. ')
+    print()
     plaintext = read_file('Plaintext.txt')
     ciphertext = encrypt(keyword, plaintext)
     write_ciphertext(ciphertext)
@@ -249,6 +251,7 @@ if choice == '1':
 
 if choice == '2':
     keyword = input('Enter your keyword. ')
+    print()
     ciphertext = read_file('Ciphertext.txt')
     plaintext = decrypt(keyword, ciphertext)
     write_plaintext(plaintext)
